@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/auth", authRoutes);
-app.use("/projects", bearerAuth, projectsRoutes);
+app.use("/projects", projectsRoutes);
 app.get("/", (req, res) => {
 	res.send("test");
 });

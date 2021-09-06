@@ -22,7 +22,7 @@ const signup = async (req, res, next) => {
 
 const signin = async (req, res) => {
 	try {
-        console.log({req})
+        console.log(req.userInfo)
 		res.status(200).json(req.userInfo);
 	} catch (error) {
 		res.status(403).send("Invalid username or password");
