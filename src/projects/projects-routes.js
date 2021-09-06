@@ -13,7 +13,7 @@ const handleGetAllProjects = async (req, res) => {
 	}
 };
 
-const handleGetProjects = async (req, res) => {
+const handleGetProjectsById = async (req, res) => {
 	const _id = req.params.id;
 	try {
 		const project = await Projects.find({ userId: _id });
@@ -50,7 +50,7 @@ const handleUpdateProjectState = async (req, res) => {
 };
 
 router.get("/getAll",  handleGetAllProjects);
-router.get("/getAllById/:id", handleGetProjects);
+router.get("/getAllById/:id", handleGetProjectsById);
 router.put("/updateState/:id", handleUpdateProjectState);
 router.post("/addProject", handleAddProject);
 

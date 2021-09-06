@@ -20,7 +20,6 @@ Users.virtual("token").get(function () {
 	let tokenObj = {
 		username: this.username,
 	};
-    console.log({tokenObj})
 	return jwt.sign(tokenObj, process.env.SECRET);
 });
 
@@ -33,7 +32,6 @@ Users.pre("save", async function () {
 Users.statics.authenticateBasic = async function (username, password) {
 	try {
         const user = await this.findOne({ username });
-		// console.log(user);
 		const valid = await bcrypt.compare(password, user.password);
 		if (valid) {
 			return user;
