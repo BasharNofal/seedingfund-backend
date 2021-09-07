@@ -15,4 +15,4 @@ const Projects = mongoose.Schema({
 	},
 });
 
-module.exports = mongoose.model("interviews", Projects);
+module.exports = mongoose.model("projects", Projects);
