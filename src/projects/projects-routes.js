@@ -17,7 +17,7 @@ const handleGetProjectsById = async (req, res) => {
 	const _id = req.params.id;
 	try {
 		const projects = await Projects.find({ userId: _id });
-        res.json({...projects})
+        res.json([...projects])
 	} catch (error) {
 		res.json({
 			response: `user with id: "${_id}" wasn't found`,
