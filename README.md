@@ -30,6 +30,8 @@ There are two main routes:
 | /updateState/:id  	| Change project state  	| PUT      |
 | /addProject  	| Adding projects  	| POST          |
 
+<hr>
+
 ## Dependencies Used
 
 ```
