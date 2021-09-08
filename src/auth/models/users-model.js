@@ -14,14 +14,15 @@ const Users = mongoose.Schema({
 		enum: ["admin", "user"],
 		default: "user",
 	},
+	token: { type: String, required: true}
 });
 
-Users.virtual("token").get(function () {
-	let tokenObj = {
-		username: this.username,
-	};
-	return jwt.sign(tokenObj, process.env.SECRET);
-});
+// Users.virtual("token").get(function () {
+// 	let tokenObj = {
+// 		username: this.username,
+// 	};
+// 	return jwt.sign(tokenObj, process.env.SECRET);
+// });
 
 Users.pre("save", async function () {
 	if (this.isModified("password")) {
